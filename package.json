@@ -1,11 +1,12 @@
 {
   "name": "behavior3js",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Behavior3 client library for Javascript (Behavior Trees for Javascript)",
   "main": "libs/behavior3-0.2.0.min.js",
   "directories": {
     "doc": "docs",
-    "test": "tests"
+    "test": "tests",
+    "packages": "jspm_packages"
   },
   "repository": {
     "type": "git",
@@ -37,5 +38,19 @@
     "gulp-yuidoc": "^0.1.2",
     "gulp-zip": "^3.0.2",
     "jshint-stylish": "^2.0.1"
+  },
+  "jspm": {
+    "directories": {
+      "doc": "docs",
+      "test": "tests"
+    },
+    "dependencies": {
+      "node-uuid": "npm:node-uuid@^1.4.3"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
   }
 }
