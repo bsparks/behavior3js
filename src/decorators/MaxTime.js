@@ -3,13 +3,13 @@ import status from '../core/status';
 import Decorator from '../core/decorator';
 
 export default class MaxTime extends Decorator {
-    constructor(params = {maxTime: 0}) {
+    constructor(maxTime = 0) {
         super();
 
         this.title = 'Max <maxTime>ms';
         this.parameters = {maxTime: 0};
 
-        this.maxTime = params.maxTime;
+        this.maxTime = maxTime;
     }
 
     open(tick) {

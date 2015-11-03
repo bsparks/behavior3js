@@ -1,12 +1,16 @@
 {
   "name"     : "behavior3js",
-  "version"  : "0.2.0",
+  "version"  : "0.3.0",
   "homepage" : "https://github.com/renatopp/behavior3js",
   "authors": [
     {
       "name"     : "Renato Pereira",
       "email"    : "renato.ppontes@gmail.com",
       "homepage" : "http://guineashots.com"
+    },
+    {
+      "name": "Ben Sparks",
+      "email": "bsparks42@gmail.com"
     }
   ],
   "description" : "Behavior3 client library for Javascript (Behavior Trees for Javascript)",
@@ -16,11 +20,13 @@
     "behavior3", "b3", "game dev", "gameai"
   ],
   "main": [
-    "libs/behavior3-0.2.0.min.js",
+    "build/b3.min.js",
+    "build/b3.min.js.map"
   ],
   "ignore"      : [
     "node_modules",
     "bower_components",
+    "jspm_packages",
     "build",
     "docs",
     "src",

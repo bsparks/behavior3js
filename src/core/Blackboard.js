@@ -13,12 +13,13 @@ export default class Blackboard {
         let memory = treeMemory.get(this);
 
         if (!memory.has(treeScope)) {
-            memory.set(treeScope, {
-                'nodeMemory': new Map(),
-                'openNodes': [],
-                'traversalDepth': 0,
-                'traversalCycle': 0,
-            });
+            let treeMem = new Map();
+            treeMem.set('nodeMemory', new Map());
+            treeMem.set('openNodes', []);
+            treeMem.set('traversalDepth', 0);
+            treeMem.set('traversalCycle', 0);
+
+            memory.set(treeScope, treeMem);
         }
 
         return memory.get(treeScope);
@@ -26,6 +27,7 @@ export default class Blackboard {
 
     _getNodeMemory(treeMemory, nodeScope) {
         var memory = treeMemory.get('nodeMemory');
+
         if (!memory.has(nodeScope)) {
             memory.set(nodeScope, new Map());
         }
@@ -49,11 +51,13 @@ export default class Blackboard {
 
     set(key, value, treeScope, nodeScope) {
         var memory = this._getMemory(treeScope, nodeScope);
+
         memory.set(key, value);
     }
 
     get(key, treeScope, nodeScope) {
         var memory = this._getMemory(treeScope, nodeScope);
+
         return memory.get(key);
     }
 };

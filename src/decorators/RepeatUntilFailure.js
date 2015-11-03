@@ -3,13 +3,13 @@ import status from '../core/status';
 import Decorator from '../core/decorator';
 
 export default class RepeatUntilFailure extends Decorator {
-    constructor(params = {maxLoop: -1}) {
+    constructor(maxLoop = -1) {
         super();
 
         this.title = 'Repeat Until Failure';
         this.parameters = {maxLoop: -1};
 
-        this.maxLoop = params.maxLoop;
+        this.maxLoop = maxLoop;
     }
 
     open(tick) {

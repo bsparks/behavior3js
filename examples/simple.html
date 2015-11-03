@@ -5,10 +5,41 @@
     <title>Simple BehaviorJS Example</title>
 </head>
 <body>
+    <p id="output"></p>
+
+    <button id="tick">Tick</button>
+
     <script src="../build/b3.min.js"></script>
 
     <script>
-        console.log('stuff', System);
+        var agent = {name: 'James Bond'};
+
+        var bb = new b3.Blackboard();
+        var tree = new b3.BehaviorTree();
+
+        var step1 = new b3.BaseNode();
+        step1.tick = function(tick) { tick.target.health = 100; return b3.STATUS.SUCCESS; };
+
+        var step2 = new b3.BaseNode();
+        step2.tick = function(tick) { tick.target.health -= 10; return b3.STATUS.SUCCESS; };
+
+        var done = new b3.BaseNode();
+        done.tick = function(tick) { console.log('tree complete'); return b3.STATUS.SUCCESS; };
+
+        tree.root = new b3.MemSequence({children: [
+            step1,
+            new b3.Wait(500),
+            step2,
+            done
+        ]});
+
+        var button = document.getElementById('tick'),
+            output = document.getElementById('output');
+
+        button.addEventListener('click', function() {
+            tree.tick(agent, bb);
+            output.innerHTML = JSON.stringify(agent);
+        });
     </script>
 </body>
 </html>

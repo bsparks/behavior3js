@@ -3,13 +3,13 @@ import Action from '../core/action';
 import status from '../core/status';
 
 export default class Wait extends Action {
-    constructor(settings = {milliseconds: 0}) {
+    constructor(ms = 100) {
         super();
 
         this.title = 'Wait <milliseconds>ms';
         this.parameters = {'milliseconds': 0};
 
-        this.endTime = settings.milliseconds;
+        this.endTime = ms;
     }
 
     open(tick) {

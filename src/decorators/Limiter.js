@@ -3,7 +3,7 @@ import status from '../core/status';
 import Decorator from '../core/decorator';
 
 export default class Limiter extends Decorator {
-    constructor(params = {maxLoop: 1}) {
+    constructor(maxLoop = 1) {
         super();
 
         this.title = 'Limit <maxLoop> Activations';
@@ -11,7 +11,7 @@ export default class Limiter extends Decorator {
             maxLoop: 1
         };
 
-        this.maxLoop = params.maxLoop;
+        this.maxLoop = maxLoop;
     }
 
     open(tick) {
