@@ -1,5 +1,5 @@
 'use strict';
-import status from '../status';
+import status from '../core/status';
 import Composite from '../core/composite';
 
 export default class Sequence extends Composite {

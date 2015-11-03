@@ -1,7 +1,7 @@
 'use strict';
 
 import uuid from 'node-uuid';
-import STATUS from '../status';
+import STATUS from './status';
 
 export default class BaseNode {
     constructor() {

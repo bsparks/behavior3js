@@ -1,6 +1,6 @@
 'use strict';
 import BaseNode from './baseNode';
-import category from '../category';
+import category from './category';
 
 export default class Action extends BaseNode {
     constructor() {

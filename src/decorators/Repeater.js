@@ -1,5 +1,5 @@
 'use strict';
-import status from '../status';
+import status from '../core/status';
 import Decorator from '../core/decorator';
 
 export default class Repeater extends Decorator {
