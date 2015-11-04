@@ -21,6 +21,7 @@ export {default as MemPriority} from './composites/memPriority';
 export {default as MemSequence} from './composites/memSequence';
 export {default as Priority} from './composites/priority';
 export {default as Sequence} from './composites/sequence';
+export {default as Parallel} from './composites/parallel';
 
 export {default as Inverter} from './decorators/inverter';
 export {default as Limiter} from './decorators/limiter';

@@ -1,17 +1,26 @@
 'use strict';
 
 import uuid from 'node-uuid';
+import BaseNode from './baseNode';
 import Blackboard from './blackboard';
 import Tick from './tick';
 
-export default class BehaviorTree {
+export default class BehaviorTree extends BaseNode {
     constructor() {
+        super();
+
         this.id = uuid();
         this.title = 'The behavior tree';
         this.description = 'Default description';
         this.properties = {};
         this.root = null;
         this.debug = null;
+    }
+
+    // allows a tree to be a nested node
+    _tick(tick) {
+        tick._tickNode(tick);
+        this.tick(tick.target, tick.blackboard);
     }
 
     tick(target, blackboard) {
